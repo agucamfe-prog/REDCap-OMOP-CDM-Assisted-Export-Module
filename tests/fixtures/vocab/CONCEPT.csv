@@ -1,0 +1,52 @@
+concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concept	concept_code	valid_start_date	valid_end_date	invalid_reason
+3025315	Body weight	Measurement	LOINC	Clinical Observation	S	29463-7	19700101	20991231	
+3036277	Body height	Measurement	LOINC	Clinical Observation	S	8302-2	19700101	20991231	
+3004249	Systolic blood pressure	Measurement	LOINC	Clinical Observation	S	8480-6	19700101	20991231	
+3027018	Heart rate	Measurement	LOINC	Clinical Observation	S	8867-4	19700101	20991231	
+3000963	Hemoglobin [Mass/volume] in Blood	Measurement	LOINC	Lab Test	S	718-7	19700101	20991231	
+3016723	Creatinine [Mass/volume] in Serum or Plasma	Measurement	LOINC	Lab Test	S	2160-0	19700101	20991231	
+3004501	Glucose [Mass/volume] in Serum or Plasma	Measurement	LOINC	Lab Test	S	2345-7	19700101	20991231	
+3004410	Hemoglobin A1c/Hemoglobin.total in Blood	Measurement	LOINC	Lab Test	S	4548-4	19700101	20991231	
+3028288	Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation	Measurement	LOINC	Lab Test	S	13457-7	19700101	20991231	
+3020460	C reactive protein [Mass/volume] in Serum or Plasma	Measurement	LOINC	Lab Test	S	1988-5	19700101	20991231	
+3023043	Mycobacterium tuberculosis complex DNA [Presence] in Specimen by NAA with probe detection	Measurement	LOINC	Lab Test	S	38379-4	19700101	20991231	
+3016102	Mycobacterium sp identified in Sputum by Acid fast stain	Measurement	LOINC	Lab Test	S	11545-1	19700101	20991231	
+3013650	HIV 1 RNA [#/volume] (viral load) in Serum or Plasma by NAA with probe detection	Measurement	LOINC	Lab Test	S	20447-9	19700101	20991231	
+3028167	CD4 cells [#/volume] in Blood	Measurement	LOINC	Lab Test	S	24467-3	19700101	20991231	
+4137083	Pain severity	Measurement	SNOMED	Observable Entity	S	405162009	19700101	20991231	
+437663	Fever	Condition	SNOMED	Clinical Finding	S	386661006	19700101	20991231	
+201820	Diabetes mellitus	Condition	SNOMED	Clinical Finding	S	73211009	19700101	20991231	
+316866	Hypertensive disorder	Condition	SNOMED	Clinical Finding	S	38341003	19700101	20991231	
+255573	Chronic obstructive pulmonary disease	Condition	SNOMED	Clinical Finding	S	13645005	19700101	20991231	
+4229881	Weight loss	Condition	SNOMED	Clinical Finding	S	89362005	19700101	20991231	
+434557	Tuberculosis	Condition	SNOMED	Clinical Finding	S	56717001	19700101	20991231	
+4329847	Myocardial infarction	Condition	SNOMED	Clinical Finding	S	22298006	19700101	20991231	
+45576876	Type 2 diabetes mellitus without complications	Condition	ICD10CM	5-char billing code		E11.9	19700101	20991231	
+4000001	Retired test concept	Condition	SNOMED	Clinical Finding		999999	19700101	20991231	D
+9191	Positive	Meas Value	SNOMED	Qualifier Value	S	10828004	19700101	20991231	
+9189	Negative	Meas Value	SNOMED	Qualifier Value	S	260385009	19700101	20991231	
+4126681	Detected	Meas Value	SNOMED	Qualifier Value	S	260373001	19700101	20991231	
+9190	Not detected	Meas Value	SNOMED	Qualifier Value	S	260415000	19700101	20991231	
+4160775	Indeterminate	Meas Value	SNOMED	Qualifier Value	S	82334004	19700101	20991231	
+42528763	Highest level of education	Observation	SNOMED	Observable Entity	S	1153637007	19700101	20991231	
+4298794	Smoker	Observation	SNOMED	Clinical Finding	S	77176002	19700101	20991231	
+4310250	Ex-smoker	Observation	SNOMED	Clinical Finding	S	8517006	19700101	20991231	
+4144272	Never smoked tobacco	Observation	SNOMED	Clinical Finding	S	266919005	19700101	20991231	
+4306655	Death	Observation	SNOMED	Event	S	419620001	19700101	20991231	
+1782521	isoniazid	Drug	RxNorm	Ingredient	S	6038	19700101	20991231	
+1763204	rifampin	Drug	RxNorm	Ingredient	S	9384	19700101	20991231	
+1759842	pyrazinamide	Drug	RxNorm	Ingredient	S	8987	19700101	20991231	
+1836391	ethambutol	Drug	RxNorm	Ingredient	S	4110	19700101	20991231	
+8507	MALE	Gender	Gender	Gender	S	M	19700101	20991231	
+8532	FEMALE	Gender	Gender	Gender	S	F	19700101	20991231	
+8551	UNKNOWN	Gender	Gender	Gender		U	19700101	20991231	
+9529	kilogram	Unit	UCUM	Unit	S	kg	19700101	20991231	
+8582	centimeter	Unit	UCUM	Unit	S	cm	19700101	20991231	
+8876	millimeter mercury column	Unit	UCUM	Unit	S	mm[Hg]	19700101	20991231	
+8713	gram per deciliter	Unit	UCUM	Unit	S	g/dL	19700101	20991231	
+8840	milligram per deciliter	Unit	UCUM	Unit	S	mg/dL	19700101	20991231	
+8554	percent	Unit	UCUM	Unit	S	%	19700101	20991231	
+8751	milligram per liter	Unit	UCUM	Unit	S	mg/L	19700101	20991231	
+4171756	<	Meas Value Operator	SNOMED	Qualifier Value	S	276139006	19700101	20991231	
+4172704	>	Meas Value Operator	SNOMED	Qualifier Value	S	276140008	19700101	20991231	
+44814637	Discharge summary	Type Concept	Note Type	Note Type	S	OMOP4822339	19700101	20991231	

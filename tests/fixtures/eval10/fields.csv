@@ -1,0 +1,187 @@
+lang,project,field_name,form_name,field_type,label,choices,validation,identifier,expected
+es,P1,record_id,demografia,text,"Código del paciente",,,,Person
+es,P1,iniciales,demografia,text,Iniciales,,,y,NotMapped
+es,P1,fecha_nacimiento,demografia,text,"Fecha de nacimiento",,date_ymd,y,Person
+es,P1,sexo,demografia,radio,Sexo,"1, Hombre | 2, Mujer",,,Person
+es,P1,hospital,demografia,dropdown,Hospital,"1, H. Clínico San Carlos | 2, H. La Paz",,,NotMapped
+es,P1,fecha_inclusion,demografia,text,"Fecha de inclusión",,date_ymd,,DateAnchor
+es,P1,antecedentes,demografia,checkbox,"Antecedentes personales","1, Hipertensión arterial | 2, Diabetes tipo 2 | 3, Fibrilación auricular | 4, Ninguno",,,Condition
+es,P1,tabaquismo,demografia,radio,Tabaquismo,"1, Fumador | 2, Exfumador | 3, Nunca fumador",,,Observation
+es,P1,fecha_visita,exploracion,text,"Fecha de la visita",,date_ymd,,Visit|DateAnchor
+es,P1,peso,exploracion,text,"Peso (kg)",,number,,Measurement
+es,P1,talla,exploracion,text,"Talla (cm)",,integer,,Measurement
+es,P1,tas,exploracion,text,"Tensión arterial sistólica (mmHg)",,integer,,Measurement
+es,P1,tad,exploracion,text,"Tensión arterial diastólica (mmHg)",,integer,,Measurement
+es,P1,fc,exploracion,text,"Frecuencia cardiaca (lpm)",,integer,,Measurement
+es,P1,nyha,exploracion,radio,"Clase funcional NYHA","1, I | 2, II | 3, III | 4, IV",,,Observation|Measurement
+es,P1,disnea,exploracion,yesno,"¿Presenta disnea?",,,,Condition
+es,P1,fatiga,exploracion,yesno,Fatiga,,,,Condition
+es,P1,fecha_analitica,analitica,text,"Fecha de extracción",,date_ymd,,DateAnchor
+es,P1,hemoglobina,analitica,text,"Hemoglobina (g/dL)",,number,,Measurement
+es,P1,creatinina,analitica,text,"Creatinina (mg/dL)",,number,,Measurement
+es,P1,sodio,analitica,text,"Sodio (mmol/L)",,integer,,Measurement
+es,P1,potasio,analitica,text,"Potasio (mmol/L)",,number,,Measurement
+es,P1,ntprobnp,analitica,text,"NT-proBNP (pg/mL)",,,,Measurement
+es,P1,fecha_inicio_tto,tratamiento,text,"Fecha de inicio",,date_ymd,,DateAnchor|Drug
+es,P1,farmaco,tratamiento,dropdown,Fármaco,"1, Enalapril | 2, Atorvastatina | 3, Ácido acetilsalicílico | 4, Warfarina",,,Drug
+es,P1,fecha_fin_tto,tratamiento,text,"Fecha de fin",,date_ymd,,DateAnchor|Drug
+es,P1,reingreso,desenlace,yesno,"Reingreso por insuficiencia cardiaca",,,,Visit|Condition|Observation
+es,P1,fallecido,desenlace,yesno,Fallecido,,,,Death
+es,P1,fecha_fallecimiento,desenlace,text,"Fecha de fallecimiento",,date_ymd,,Death
+es,P2,record_id,basal,text,ID,,,,Person
+es,P2,fnac,basal,text,"Fecha de nacimiento",,date_ymd,y,Person
+es,P2,sexo,basal,radio,Sexo,"1, Hombre | 2, Mujer",,,Person
+es,P2,centro,basal,dropdown,"Centro de salud","1, CS Las Rozas | 2, CS Majadahonda | 3, CS Pozuelo",,,NotMapped
+es,P2,fecha_dx,basal,text,"Fecha de diagnóstico de diabetes",,date_ymd,,Condition
+es,P2,hta,basal,yesno,"Hipertensión arterial",,,,Condition
+es,P2,dislipemia,basal,yesno,Dislipemia,,,,Condition
+es,P2,fecha_seg,seguimiento,text,"Fecha de la consulta",,date_ymd,,Visit|DateAnchor
+es,P2,peso,seguimiento,text,"Peso (kg)",,number,,Measurement
+es,P2,imc,seguimiento,text,"IMC (kg/m2)",,number,,Measurement
+es,P2,tas,seguimiento,text,"TAS (mmHg)",,integer,,Measurement
+es,P2,hba1c,seguimiento,text,"HbA1c (%)",,number,,Measurement
+es,P2,glucemia,seguimiento,text,"Glucemia basal (mg/dL)",,integer,,Measurement
+es,P2,col_total,seguimiento,text,"Colesterol total (mg/dL)",,integer,,Measurement
+es,P2,hdl,seguimiento,text,"Colesterol HDL (mg/dL)",,integer,,Measurement
+es,P2,trigliceridos,seguimiento,text,"Triglicéridos (mg/dL)",,integer,,Measurement
+es,P2,tratamiento,seguimiento,checkbox,"Tratamiento actual","1, Metformina | 2, Insulina | 3, Atorvastatina | 4, Enalapril",,,Drug
+es,P2,hipoglucemias,seguimiento,text,"Número de hipoglucemias desde la última consulta",,integer,,Observation|Measurement
+es,P2,comentarios,seguimiento,notes,Comentarios,,,,NotMapped
+es,P3,record_id,ingreso,text,"Número de caso",,,,Person
+es,P3,nhc,ingreso,text,"Número de historia clínica",,,y,NotMapped
+es,P3,fecha_nac,ingreso,text,"Fecha de nacimiento",,date_ymd,y,Person
+es,P3,sexo,ingreso,radio,Sexo,"1, Varón | 2, Mujer",,,Person
+es,P3,fecha_ingreso,ingreso,text,"Fecha de ingreso hospitalario",,date_ymd,,Visit
+es,P3,fecha_alta,ingreso,text,"Fecha de alta",,date_ymd,,Visit|DateAnchor
+es,P3,pcr,ingreso,radio,"PCR de SARS-CoV-2","1, Positiva | 2, Negativa",,,Measurement
+es,P3,sintomas,ingreso,checkbox,"Síntomas al ingreso","1, Fiebre | 2, Tos | 3, Disnea | 4, Cefalea | 5, Náuseas",,,Condition
+es,P3,neumonia,ingreso,yesno,"Neumonía en la radiografía",,,,Condition
+es,P3,sato2,ingreso,text,"Saturación de oxígeno (%)",,integer,,Measurement
+es,P3,temp,ingreso,text,"Temperatura (°C)",,number,,Measurement
+es,P3,pcr_mg,ingreso,text,"Proteína C reactiva (mg/L)",,,,Measurement
+es,P3,ferritina,ingreso,text,"Ferritina (ng/mL)",,integer,,Measurement
+es,P3,dexametasona,ingreso,yesno,"Tratamiento con dexametasona",,,,Drug
+es,P3,uci,ingreso,yesno,"Ingreso en UCI",,,,Visit|Observation
+es,P3,evolucion,ingreso,notes,"Evolución clínica",,,,Note
+es,P3,exitus,ingreso,yesno,Exitus,,,,Death
+es,P3,fecha_exitus,ingreso,text,"Fecha de exitus",,date_ymd,,Death
+es,P4,record_id,cribado,text,"ID de participante",,,,Person
+es,P4,dni,cribado,text,DNI,,,y,NotMapped
+es,P4,fecha_nacimiento,cribado,text,"Fecha de nacimiento",,date_ymd,y,Person
+es,P4,sexo,cribado,radio,Sexo,"2, Mujer",,,Person
+es,P4,codigo_postal,cribado,text,"Código postal",,zipcode,y,NotMapped
+es,P4,ant_familiares,cribado,yesno,"Antecedentes familiares de cáncer de mama",,,,Observation|Condition
+es,P4,fecha_mamografia,cribado,text,"Fecha de la mamografía",,date_ymd,,Procedure|DateAnchor
+es,P4,birads,cribado,radio,"Resultado BI-RADS","0, 0 Incompleto | 1, 1 Negativo | 2, 2 Benigno | 3, 3 Probablemente benigno | 4, 4 Sospechoso | 5, 5 Muy sugestivo de malignidad",,,Measurement
+es,P4,biopsia,cribado,yesno,"Biopsia realizada",,,,Procedure
+es,P4,cancer,cribado,yesno,"Diagnóstico de cáncer de mama",,,,Condition
+es,P4,peso,cribado,text,"Peso (kg)",,number,,Measurement
+es,P4,talla,cribado,text,"Talla (cm)",,integer,,Measurement
+es,P4,tratamiento_hormonal,cribado,yesno,"Terapia hormonal sustitutiva",,,,Drug
+es,P5,record_id,baseline,text,"ID del paciente",,,,Person
+es,P5,dob,baseline,text,"Fecha de nacimiento",,date_ymd,y,Person
+es,P5,sex,baseline,radio,Sexo,"1, Hombre | 2, Mujer",,,Person
+es,P5,onset_date,baseline,text,"Fecha de inicio del ictus",,date_ymd,,Condition
+es,P5,admission_date,baseline,text,"Fecha de ingreso hospitalario",,date_ymd,,Visit
+es,P5,nihss,baseline,text,"Puntuación NIHSS al ingreso",,integer,,Measurement
+es,P5,af,baseline,yesno,"Fibrilación auricular",,,,Condition
+es,P5,hypertension,baseline,yesno,"Hipertensión arterial",,,,Condition
+es,P5,sbp,baseline,text,"Tensión arterial sistólica (mmHg)",,integer,,Measurement
+es,P5,glucose,baseline,text,"Glucosa (mg/dL)",,integer,,Measurement
+es,P5,inr,baseline,text,INR,,number,,Measurement
+es,P5,ct_result,baseline,radio,"Resultado de la TC craneal","1, Isquémico | 2, Hemorrágico | 3, Normal",,,Procedure|Measurement|Observation
+es,P5,discharge_med,baseline,dropdown,"Antitrombótico al alta","1, Ácido acetilsalicílico | 2, Clopidogrel | 3, Warfarina | 4, Ninguno",,,Drug
+es,P5,fu_date,followup,text,"Fecha del seguimiento a 90 días",,date_ymd,,Visit|DateAnchor
+es,P5,mrs,followup,radio,"Escala de Rankin modificada a los 90 días","0, 0 | 1, 1 | 2, 2 | 3, 3 | 4, 4 | 5, 5 | 6, 6",,,Measurement|Observation
+es,P5,died,followup,yesno,"Fallecido antes del seguimiento",,,,Death
+es,P5,death_date,followup,text,"Fecha de fallecimiento",,date_ymd,,Death
+en,P6,record_id,demographics,text,"Participant ID",,,,Person
+en,P6,first_name,demographics,text,"First name",,,y,NotMapped
+en,P6,dob,demographics,text,"Date of birth",,date_ymd,y,Person
+en,P6,sex,demographics,radio,Sex,"1, Male | 2, Female",,,Person
+en,P6,race,demographics,dropdown,Race,"1, White | 2, Black or African American | 3, Asian",,,Person
+en,P6,ethnicity,demographics,radio,Ethnicity,"1, Hispanic or Latino | 2, Not Hispanic or Latino",,,Person
+en,P6,dx_asthma,demographics,text,"Date of asthma diagnosis",,date_ymd,,Condition
+en,P6,visit_date,clinic_visit,text,"Clinic visit date",,date_ymd,,Visit|DateAnchor
+en,P6,weight,clinic_visit,text,"Weight (kg)",,number,,Measurement
+en,P6,height,clinic_visit,text,"Height (cm)",,integer,,Measurement
+en,P6,resp_rate,clinic_visit,text,"Respiratory rate (breaths/min)",,integer,,Measurement
+en,P6,spo2,clinic_visit,text,"Oxygen saturation (%)",,integer,,Measurement
+en,P6,act_score,clinic_visit,text,"Childhood Asthma Control Test score",,integer,,Measurement|Observation
+en,P6,exacerbation,clinic_visit,yesno,"Asthma exacerbation since last visit",,,,Condition|Observation
+en,P6,ed_visit,clinic_visit,yesno,"Emergency department visit since last visit",,,,Visit|Observation
+en,P6,med_start,medication,text,"Medication start date",,date_ymd,,DateAnchor|Drug
+en,P6,medication,medication,dropdown,Medication,"1, Salbutamol (albuterol) inhaler | 2, Prednisone | 3, Amoxicillin",,,Drug
+en,P6,med_end,medication,text,"Medication end date",,date_ymd,,DateAnchor|Drug
+en,P7,record_id,admission,text,"Study number",,,,Person
+en,P7,mrn,admission,text,"Medical record number",,,y,NotMapped
+en,P7,dob,admission,text,"Date of birth",,date_ymd,y,Person
+en,P7,sex,admission,radio,Sex,"1, Male | 2, Female",,,Person
+en,P7,icu_admission,admission,text,"Date of ICU admission",,date_ymd,,Visit
+en,P7,sepsis_source,admission,radio,"Source of infection","1, Pneumonia | 2, Urinary tract | 3, Abdominal | 4, Unknown",,,Condition
+en,P7,sepsis,admission,yesno,"Sepsis diagnosis confirmed",,,,Condition
+en,P7,ventilation,admission,yesno,"Invasive mechanical ventilation",,,,Procedure
+en,P7,antibiotic,admission,checkbox,"Empirical antibiotics","1, Ceftriaxone | 2, Amoxicillin | 3, Other",,,Drug
+en,P7,assess_date,daily_assessment,text,"Assessment date",,date_ymd,,DateAnchor
+en,P7,temperature,daily_assessment,text,"Temperature (°C)",,number,,Measurement
+en,P7,heart_rate,daily_assessment,text,"Heart rate (bpm)",,integer,,Measurement
+en,P7,wbc,daily_assessment,text,"White blood cell count (x10^9/L)",,number,,Measurement
+en,P7,platelets,daily_assessment,text,"Platelets (x10^9/L)",,integer,,Measurement
+en,P7,crp,daily_assessment,text,"CRP (mg/L)",,,,Measurement
+en,P7,bilirubin,daily_assessment,text,"Total bilirubin (mg/dL)",,number,,Measurement
+en,P7,progress_note,daily_assessment,notes,"Daily progress note",,,,Note
+en,P7,outcome,icu_outcome,radio,"ICU outcome","1, Discharged alive | 2, Died in ICU",,,Death|Observation
+en,P7,death_date,icu_outcome,text,"Date of death",,date_ymd,,Death
+en,P8,record_id,baseline,text,"Registry ID",,,,Person
+en,P8,dob,baseline,text,"Date of birth",,date_ymd,y,Person
+en,P8,sex,baseline,radio,Sex,"1, Male | 2, Female",,,Person
+en,P8,centre,baseline,dropdown,Centre,"1, Leeds | 2, Manchester | 3, Bristol",,,NotMapped
+en,P8,rheumatologist,baseline,dropdown,"Responsible rheumatologist","11, Rheumatologist A | 12, Rheumatologist B | 13, Rheumatologist C | 14, Rheumatologist D",,,NotMapped
+en,P8,baseline_date,baseline,text,"Baseline assessment date",,date_ymd,,Visit|DateAnchor
+en,P8,ra_dx,baseline,text,"Date of RA diagnosis",,date_ymd,,Condition
+en,P8,das28,baseline,text,"DAS28-CRP score",,number,,Measurement
+en,P8,crp,baseline,text,"C-reactive protein (mg/L)",,number,,Measurement
+en,P8,alt,baseline,text,"ALT (U/L)",,integer,,Measurement
+en,P8,ast,baseline,text,"AST (U/L)",,integer,,Measurement
+en,P8,hb,baseline,text,"Haemoglobin (g/dL)",,number,,Measurement
+en,P8,prednisone,baseline,yesno,"Current oral prednisone",,,,Drug
+en,P8,osteoarthritis,baseline,yesno,"Concomitant osteoarthritis",,,,Condition
+en,P8,ae_date,adverse_event,text,"Adverse event onset date",,date_ymd,,DateAnchor|Condition
+en,P8,ae_type,adverse_event,dropdown,"Adverse event","1, Pneumonia | 2, Anaemia | 3, Headache | 4, Other",,,Condition
+en,P8,ae_serious,adverse_event,yesno,"Serious adverse event?",,,,Condition|Observation
+en,P9,record_id,booking,text,"Participant ID",,,,Person
+en,P9,dob,booking,text,"Date of birth",,date_ymd,y,Person
+en,P9,sex,booking,radio,Sex,"2, Female",,,Person
+en,P9,lmp,booking,text,"Date of last menstrual period",,date_ymd,,Observation|DateAnchor
+en,P9,parity,booking,text,"Number of previous births",,integer,,Observation|Measurement
+en,P9,smoking,booking,radio,"Smoking status","1, Current smoker | 2, Former smoker | 3, Never smoked",,,Observation
+en,P9,hypothyroidism,booking,yesno,Hypothyroidism,,,,Condition
+en,P9,levothyroxine,booking,yesno,"Taking levothyroxine",,,,Drug
+en,P9,visit_date,antenatal,text,"Antenatal visit date",,date_ymd,,Visit|DateAnchor
+en,P9,weight,antenatal,text,"Weight (kg)",,number,,Measurement
+en,P9,sbp,antenatal,text,"Systolic blood pressure (mmHg)",,integer,,Measurement
+en,P9,dbp,antenatal,text,"Diastolic blood pressure (mmHg)",,integer,,Measurement
+en,P9,ogtt,antenatal,text,"Fasting glucose (mg/dL)",,integer,,Measurement
+en,P9,hb,antenatal,text,"Haemoglobin (g/dL)",,number,,Measurement
+en,P9,tsh,antenatal,text,"TSH (mU/L)",,number,,Measurement
+en,P9,gdm,antenatal,yesno,"Gestational diabetes diagnosed",,,,Condition
+en,P9,delivery_date,delivery,text,"Date of delivery",,date_ymd,,Procedure|Observation|DateAnchor
+en,P9,birth_weight,delivery,text,"Birth weight (g)",,integer,,Measurement
+en,P9,anaemia,delivery,yesno,"Postpartum anaemia",,,,Condition
+en,P10,record_id,baseline,text,"Patient ID",,,,Person
+en,P10,dob,baseline,text,"Date of birth",,date_ymd,y,Person
+en,P10,sex,baseline,radio,Sex,"1, Male | 2, Female",,,Person
+en,P10,onset_date,baseline,text,"Date of stroke onset",,date_ymd,,Condition
+en,P10,admission_date,baseline,text,"Date of hospital admission",,date_ymd,,Visit
+en,P10,nihss,baseline,text,"NIHSS score on admission",,integer,,Measurement
+en,P10,af,baseline,yesno,"Atrial fibrillation",,,,Condition
+en,P10,hypertension,baseline,yesno,Hypertension,,,,Condition
+en,P10,sbp,baseline,text,"Systolic blood pressure (mmHg)",,integer,,Measurement
+en,P10,glucose,baseline,text,"Glucose (mg/dL)",,integer,,Measurement
+en,P10,inr,baseline,text,INR,,number,,Measurement
+en,P10,ct_result,baseline,radio,"Brain CT result","1, Ischaemic | 2, Haemorrhagic | 3, Normal",,,Procedure|Measurement|Observation
+en,P10,discharge_med,baseline,dropdown,"Antithrombotic at discharge","1, Aspirin | 2, Clopidogrel | 3, Warfarin | 4, None",,,Drug
+en,P10,fu_date,followup,text,"Date of 90-day follow-up",,date_ymd,,Visit|DateAnchor
+en,P10,mrs,followup,radio,"Modified Rankin Scale at 90 days","0, 0 | 1, 1 | 2, 2 | 3, 3 | 4, 4 | 5, 5 | 6, 6",,,Measurement|Observation
+en,P10,died,followup,yesno,"Died before follow-up",,,,Death
+en,P10,death_date,followup,text,"Date of death",,date_ymd,,Death

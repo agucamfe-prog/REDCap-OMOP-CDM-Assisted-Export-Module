@@ -1,0 +1,283 @@
+{
+    "name": "OMOP-CDM Export",
+    "namespace": "OmopCdm\\OmopCdmExportModule",
+    "description": "Maps and exports a REDCap project to the OMOP Common Data Model v5.4. Proposes a target for every field, lets you review and edit it, documents the mapping and generates the export.",
+    "documentation": "README.md",
+    "authors": [
+        {
+            "name": "Fernando Agustín Camacho",
+            "email": "agucamfe@gmail.com",
+            "institution": "Universidad Europea de Madrid"
+        }
+    ],
+    "framework-version": 9,
+    "compatibility": {
+        "php-version-min": "7.4.0",
+        "redcap-version-min": "12.0.0"
+    },
+    "permissions": [],
+    "links": {
+        "control-center": [
+            {
+                "name": "OMOP-CDM: vocabulary",
+                "tt_name": "voc_title",
+                "icon": "fas fa-book",
+                "url": "pages/vocabulary.php"
+            }
+        ],
+        "project": [
+            {
+                "name": "OMOP-CDM: mapping dashboard",
+                "icon": "fas fa-project-diagram",
+                "url": "pages/dashboard.php",
+                "show-header-and-footer": false,
+                "tt_name": "dash_title"
+            },
+            {
+                "name": "OMOP-CDM: mapping editor",
+                "tt_name": "editor_title",
+                "icon": "fas fa-clipboard-check",
+                "url": "pages/editor.php",
+                "show-header-and-footer": false
+            },
+            {
+                "name": "OMOP-CDM: export",
+                "tt_name": "ex_title",
+                "icon": "fas fa-file-export",
+                "url": "pages/export.php",
+                "show-header-and-footer": false
+            }
+        ]
+    },
+    "no-auth-pages": [],
+    "project-settings": [
+        {
+            "key": "desc-source",
+            "tt_name": "cfg_sec_source",
+            "name": "<b>1. Data source</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "cdm-version",
+            "tt_name": "set_cdm_version",
+            "name": "Target OMOP CDM version",
+            "type": "dropdown",
+            "default": "5.4",
+            "choices": [
+                {
+                    "value": "5.4",
+                    "name": "CDM v5.4"
+                }
+            ]
+        },
+        {
+            "key": "cdm-source-name",
+            "tt_name": "cfg_source_name",
+            "name": "Source name",
+            "type": "text"
+        },
+        {
+            "key": "cdm-source-abbreviation",
+            "tt_name": "cfg_source_abbr",
+            "name": "Abbreviation (max 25 chars)",
+            "type": "text"
+        },
+        {
+            "key": "cdm-holder",
+            "tt_name": "cfg_holder",
+            "name": "Data holder",
+            "type": "text",
+            "required": true
+        },
+        {
+            "key": "vocabulary-version",
+            "tt_name": "cfg_vocab_version",
+            "name": "Vocabulary version",
+            "type": "text",
+            "required": true
+        },
+        {
+            "key": "desc-person",
+            "tt_name": "cfg_sec_person",
+            "name": "<b>2. PERSON table</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "birth-date-field",
+            "tt_name": "cfg_birth_date",
+            "name": "Date of birth field",
+            "type": "field-list"
+        },
+        {
+            "key": "birth-year-field",
+            "tt_name": "cfg_birth_year",
+            "name": "Year of birth field",
+            "type": "field-list"
+        },
+        {
+            "key": "gender-field",
+            "tt_name": "cfg_gender",
+            "name": "Sex / gender field",
+            "type": "field-list"
+        },
+        {
+            "key": "race-field",
+            "tt_name": "cfg_race",
+            "name": "Race field",
+            "type": "field-list"
+        },
+        {
+            "key": "ethnicity-field",
+            "tt_name": "cfg_ethnicity",
+            "name": "Ethnicity field",
+            "type": "field-list"
+        },
+        {
+            "key": "desc-death",
+            "tt_name": "cfg_sec_death",
+            "name": "<b>DEATH table</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "death-date-field",
+            "tt_name": "cfg_death_date",
+            "name": "Date of death field",
+            "type": "field-list"
+        },
+        {
+            "key": "desc-dates",
+            "tt_name": "cfg_sec_dates",
+            "name": "<b>3. Dates</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "default-date-field",
+            "tt_name": "cfg_default_date",
+            "name": "Default reference date",
+            "type": "field-list"
+        },
+        {
+            "key": "desc-visits",
+            "tt_name": "cfg_sec_visits",
+            "name": "<b>Visits</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "generate-visits",
+            "tt_name": "cfg_gen_visits",
+            "name": "Generate VISIT_OCCURRENCE",
+            "type": "checkbox"
+        },
+        {
+            "key": "visit-concept-id",
+            "tt_name": "cfg_visit_concept",
+            "name": "Visit concept_id",
+            "type": "text"
+        },
+        {
+            "key": "desc-privacy",
+            "tt_name": "cfg_sec_privacy",
+            "name": "<b>4. Privacy</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "hash-person-source-value",
+            "tt_name": "cfg_hash",
+            "name": "Hash person_source_value",
+            "type": "checkbox"
+        },
+        {
+            "key": "date-shift-days",
+            "tt_name": "cfg_date_shift",
+            "name": "Shift dates up to N days per person (0 = off)",
+            "type": "text"
+        },
+        {
+            "key": "birth-precision",
+            "tt_name": "cfg_birth_precision",
+            "name": "Date of birth precision",
+            "type": "dropdown",
+            "choices": [
+                {"value": "full", "name": "Full date", "tt_name": "cfg_birth_full"},
+                {"value": "month", "name": "Year and month", "tt_name": "cfg_birth_month"},
+                {"value": "year", "name": "Year only", "tt_name": "cfg_birth_year_only"}
+            ]
+        },
+        {
+            "key": "suppress-free-text",
+            "tt_name": "cfg_suppress_free_text",
+            "name": "Do not export free text",
+            "type": "checkbox"
+        },
+        {
+            "key": "desc-entities",
+            "tt_name": "cfg_sec_entities",
+            "name": "<b>5. Care sites and providers</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "care-site-field",
+            "tt_name": "cfg_care_site",
+            "name": "Care site field",
+            "type": "field-list"
+        },
+        {
+            "key": "provider-field",
+            "tt_name": "cfg_provider",
+            "name": "Provider field",
+            "type": "field-list"
+        },
+        {
+            "key": "desc-load",
+            "tt_name": "cfg_sec_load",
+            "name": "<b>6. Notes and load kit</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "note-language-concept-id",
+            "tt_name": "cfg_note_language",
+            "name": "NOTE language concept_id",
+            "type": "text"
+        },
+        {
+            "key": "load-schema",
+            "tt_name": "cfg_load_schema",
+            "name": "Schema for the load kit",
+            "type": "text"
+        }
+    ],
+    "system-settings": [
+        {
+            "key": "desc-vocab",
+            "tt_name": "cfg_sec_vocab",
+            "name": "<b>OMOP vocabulary (optional)</b>",
+            "type": "descriptive"
+        },
+        {
+            "key": "vocab-concept-csv",
+            "tt_name": "cfg_vocab_csv",
+            "name": "Path to Athena CONCEPT.csv",
+            "type": "text"
+        },
+        {
+            "key": "vocab-sqlite-path",
+            "tt_name": "cfg_vocab_sqlite",
+            "name": "Path to the SQLite index",
+            "type": "text"
+        },
+        {
+            "key": "webapi-url",
+            "tt_name": "cfg_webapi_url",
+            "name": "ATLAS WebAPI URL",
+            "type": "text"
+        },
+        {
+            "key": "webapi-token",
+            "tt_name": "cfg_webapi_token",
+            "name": "WebAPI bearer token",
+            "type": "password"
+        }
+    ],
+    "tt_name": "module_name",
+    "tt_description": "module_desc"
+}

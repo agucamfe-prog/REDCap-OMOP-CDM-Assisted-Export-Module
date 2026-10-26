@@ -1,0 +1,7 @@
+# Local or generated files
+*.sqlite
+*.zip
+projects.json
+node_modules/
+.DS_Store
+Thumbs.db

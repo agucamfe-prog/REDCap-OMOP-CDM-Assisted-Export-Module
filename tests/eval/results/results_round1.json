@@ -1,0 +1,447 @@
+{
+    "P1": {
+        "pid": 23,
+        "lang": "es",
+        "mode": "manual",
+        "fields": 29,
+        "requests": 37,
+        "warnings": {
+            "concept_not_found": 4
+        },
+        "blocked": [],
+        "confirmed": 2,
+        "suggest": [],
+        "errors": [],
+        "classifier": {
+            "hit": 27,
+            "n": 29,
+            "miss": [
+                "fatiga: Observation ≠ Condition",
+                "ntprobnp: Observation ≠ Measurement"
+            ]
+        },
+        "bulk_excluded": 2,
+        "states": {
+            "proposed": 11,
+            "excluded": 2,
+            "approved": 16
+        },
+        "by_domain": {
+            "Person": 1,
+            "Condition": 3,
+            "Observation": 1,
+            "Measurement": 9,
+            "Drug": 1,
+            "Death": 1
+        },
+        "seconds": 37.2
+    },
+    "P2": {
+        "pid": 24,
+        "lang": "es",
+        "mode": "annotation",
+        "fields": 19,
+        "requests": 13,
+        "warnings": {
+            "concept_not_found": 3
+        },
+        "blocked": [],
+        "confirmed": 2,
+        "suggest": [],
+        "errors": [],
+        "classifier": {
+            "hit": 16,
+            "n": 19,
+            "miss": [
+                "fecha_dx: DateAnchor ≠ Condition",
+                "hipoglucemias: Visit ≠ Observation|Measurement",
+                "comentarios: Observation ≠ NotMapped"
+            ]
+        },
+        "adopted": 15,
+        "bulk_approved": 11,
+        "bulk_excluded": 0,
+        "states": {
+            "proposed": 4,
+            "approved": 13,
+            "excluded": 2
+        },
+        "by_domain": {
+            "Person": 1,
+            "Condition": 3,
+            "Measurement": 8,
+            "Drug": 1
+        },
+        "seconds": 12.2
+    },
+    "P3": {
+        "pid": 25,
+        "lang": "es",
+        "mode": "manual",
+        "fields": 18,
+        "requests": 27,
+        "warnings": {
+            "label_unit_no_validation": 1,
+            "free_text": 1,
+            "measurement_text": 1,
+            "vague_yesno": 1,
+            "concept_not_found": 2
+        },
+        "blocked": [],
+        "confirmed": 3,
+        "suggest": [
+            {
+                "field": "pcr",
+                "query": "pcr sars cov",
+                "n": 0,
+                "picked": null,
+                "rank": null
+            }
+        ],
+        "errors": [
+            "pcr: no valid suggestion"
+        ],
+        "classifier": {
+            "hit": 14,
+            "n": 18,
+            "miss": [
+                "pcr: Observation ≠ Measurement",
+                "neumonia: Procedure ≠ Condition",
+                "pcr_mg: Observation ≠ Measurement",
+                "evolucion: Observation ≠ Note"
+            ]
+        },
+        "bulk_excluded": 1,
+        "states": {
+            "proposed": 7,
+            "excluded": 1,
+            "approved": 10
+        },
+        "by_domain": {
+            "Person": 1,
+            "Condition": 2,
+            "Measurement": 4,
+            "Drug": 1,
+            "Note": 1,
+            "Death": 1
+        },
+        "seconds": 18
+    },
+    "P4": {
+        "pid": 26,
+        "lang": "es",
+        "mode": "manual",
+        "fields": 13,
+        "requests": 8,
+        "warnings": [],
+        "blocked": [],
+        "confirmed": 0,
+        "suggest": [],
+        "errors": [],
+        "classifier": {
+            "hit": 13,
+            "n": 13,
+            "miss": []
+        },
+        "bulk_excluded": 2,
+        "states": {
+            "proposed": 7,
+            "excluded": 2,
+            "approved": 4
+        },
+        "by_domain": {
+            "Person": 1,
+            "Condition": 1,
+            "Measurement": 2
+        },
+        "seconds": 8.3
+    },
+    "P10": {
+        "pid": 29,
+        "lang": "en",
+        "mode": "manual",
+        "fields": 17,
+        "requests": 23,
+        "warnings": {
+            "concept_not_found": 1,
+            "measurement_no_unit": 1
+        },
+        "blocked": [],
+        "confirmed": 2,
+        "suggest": [],
+        "errors": [],
+        "classifier": {
+            "hit": 12,
+            "n": 17,
+            "miss": [
+                "onset_date: DateAnchor ≠ Condition",
+                "nihss: Observation ≠ Measurement",
+                "af: Observation ≠ Condition",
+                "discharge_med: Visit ≠ Drug",
+                "died: Visit ≠ Death"
+            ]
+        },
+        "bulk_excluded": 0,
+        "states": {
+            "proposed": 8,
+            "approved": 9
+        },
+        "by_domain": {
+            "Person": 1,
+            "Condition": 3,
+            "Measurement": 3,
+            "Drug": 1,
+            "Death": 1
+        },
+        "seconds": 22.9
+    },
+    "P5": {
+        "pid": 30,
+        "lang": "es",
+        "mode": "import",
+        "fields": 17,
+        "requests": 19,
+        "warnings": {
+            "import_labels_differ": 2,
+            "concept_not_found": 1,
+            "measurement_no_unit": 1
+        },
+        "blocked": [],
+        "confirmed": 4,
+        "suggest": [],
+        "errors": [],
+        "classifier": {
+            "hit": 12,
+            "n": 17,
+            "miss": [
+                "onset_date: DateAnchor ≠ Condition",
+                "nihss: Observation ≠ Measurement",
+                "af: Observation ≠ Condition",
+                "discharge_med: Visit ≠ Drug",
+                "died: Visit ≠ Death"
+            ]
+        },
+        "imported": 9,
+        "import_skipped": {
+            "record_id": "no_mapping",
+            "dob": "no_mapping",
+            "admission_date": "no_mapping",
+            "nihss": "no_mapping",
+            "ct_result": "no_mapping",
+            "fu_date": "no_mapping",
+            "mrs": "no_mapping",
+            "death_date": "no_mapping"
+        },
+        "bulk_approved": 5,
+        "bulk_excluded": 0,
+        "states": {
+            "proposed": 8,
+            "approved": 9
+        },
+        "by_domain": {
+            "Person": 1,
+            "Condition": 3,
+            "Measurement": 3,
+            "Drug": 1,
+            "Death": 1
+        },
+        "seconds": 15.2
+    },
+    "P6": {
+        "pid": 31,
+        "lang": "en",
+        "mode": "manual",
+        "fields": 18,
+        "requests": 22,
+        "warnings": {
+            "concept_not_found": 3
+        },
+        "blocked": [],
+        "confirmed": 1,
+        "suggest": [],
+        "errors": [],
+        "classifier": {
+            "hit": 16,
+            "n": 18,
+            "miss": [
+                "dx_asthma: DateAnchor ≠ Condition",
+                "act_score: Condition ≠ Measurement|Observation"
+            ]
+        },
+        "bulk_excluded": 1,
+        "states": {
+            "proposed": 8,
+            "excluded": 1,
+            "approved": 9
+        },
+        "by_domain": {
+            "Person": 3,
+            "Condition": 1,
+            "Measurement": 4,
+            "Drug": 1
+        },
+        "seconds": 18.4
+    },
+    "P7": {
+        "pid": 33,
+        "lang": "en",
+        "mode": "manual",
+        "fields": 19,
+        "requests": 25,
+        "warnings": {
+            "label_unit_no_validation": 1,
+            "free_text": 1,
+            "measurement_text": 1,
+            "concept_not_found": 1
+        },
+        "blocked": [],
+        "confirmed": 2,
+        "suggest": [],
+        "errors": [],
+        "classifier": {
+            "hit": 17,
+            "n": 19,
+            "miss": [
+                "ventilation: Observation ≠ Procedure",
+                "progress_note: Observation ≠ Note"
+            ]
+        },
+        "bulk_excluded": 1,
+        "states": {
+            "proposed": 7,
+            "excluded": 1,
+            "approved": 11
+        },
+        "by_domain": {
+            "Person": 1,
+            "Condition": 2,
+            "Drug": 1,
+            "Measurement": 6,
+            "Note": 1
+        },
+        "seconds": 20.4
+    },
+    "P8": {
+        "pid": 34,
+        "lang": "en",
+        "mode": "manual",
+        "fields": 17,
+        "requests": 21,
+        "warnings": {
+            "yesno_in_domain": 1
+        },
+        "blocked": [],
+        "confirmed": 0,
+        "suggest": [],
+        "errors": [],
+        "classifier": {
+            "hit": 11,
+            "n": 17,
+            "miss": [
+                "centre: Observation ≠ NotMapped",
+                "rheumatologist: Observation ≠ NotMapped",
+                "ra_dx: DateAnchor ≠ Condition",
+                "das28: Observation ≠ Measurement",
+                "prednisone: Observation ≠ Drug",
+                "osteoarthritis: Observation ≠ Condition"
+            ]
+        },
+        "bulk_excluded": 0,
+        "states": {
+            "proposed": 6,
+            "approved": 9,
+            "excluded": 2
+        },
+        "by_domain": {
+            "Person": 1,
+            "Condition": 3,
+            "Measurement": 4,
+            "Drug": 1
+        },
+        "seconds": 18.7
+    },
+    "P9": {
+        "pid": 35,
+        "lang": "en",
+        "mode": "suggest",
+        "fields": 19,
+        "requests": 27,
+        "warnings": {
+            "date_other_form": 3,
+            "concept_not_found": 3,
+            "yesno_in_domain": 1
+        },
+        "blocked": [],
+        "confirmed": 3,
+        "suggest": [
+            {
+                "field": "weight",
+                "query": "weight",
+                "n": 3,
+                "picked": "3025315 Body weight",
+                "rank": 1
+            },
+            {
+                "field": "sbp",
+                "query": "systolic blood pressure",
+                "n": 2,
+                "picked": "3004249 Systolic blood pressure",
+                "rank": 1
+            },
+            {
+                "field": "dbp",
+                "query": "diastolic blood pressure",
+                "n": 2,
+                "picked": "3012888 Diastolic blood pressure",
+                "rank": 1
+            },
+            {
+                "field": "ogtt",
+                "query": "fasting glucose",
+                "n": 0,
+                "picked": null,
+                "rank": null
+            },
+            {
+                "field": "hb",
+                "query": "haemoglobin",
+                "n": 0,
+                "picked": null,
+                "rank": null
+            },
+            {
+                "field": "tsh",
+                "query": "thyrotropin",
+                "n": 1,
+                "picked": "3009201 Thyrotropin [Units\/volume] in Serum or Plasma",
+                "rank": 1
+            }
+        ],
+        "errors": [
+            "ogtt: no valid suggestion",
+            "hb: no valid suggestion"
+        ],
+        "classifier": {
+            "hit": 16,
+            "n": 19,
+            "miss": [
+                "hypothyroidism: Observation ≠ Condition",
+                "levothyroxine: Observation ≠ Drug",
+                "anaemia: Observation ≠ Condition"
+            ]
+        },
+        "bulk_excluded": 0,
+        "states": {
+            "proposed": 10,
+            "approved": 9
+        },
+        "by_domain": {
+            "Person": 1,
+            "Observation": 1,
+            "Condition": 2,
+            "Drug": 1,
+            "Measurement": 4
+        },
+        "seconds": 27.4
+    }
+}

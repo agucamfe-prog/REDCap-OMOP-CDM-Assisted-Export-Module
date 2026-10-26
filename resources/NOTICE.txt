@@ -1,0 +1,17 @@
+Third-party files included in this module
+=========================================
+
+resources/ddl/postgresql/OMOPCDM_postgresql_5.4_ddl.sql
+resources/ddl/postgresql/OMOPCDM_postgresql_5.4_primary_keys.sql
+resources/ddl/postgresql/OMOPCDM_postgresql_5.4_indices.sql
+resources/OMOP_CDMv5.4_Field_Level.csv
+
+Source:   https://github.com/OHDSI/CommonDataModel (main branch, inst/ddl/5.4 and inst/csv)
+Author:   Observational Health Data Sciences and Informatics (OHDSI)
+License:  Apache License 2.0, according to the package's DESCRIPTION file
+          (https://www.apache.org/licenses/LICENSE-2.0)
+
+They are distributed unmodified. The DDL travels inside the load kit of each
+export, with @cdmDatabaseSchema replaced by the chosen schema; the
+Field_Level file is used by the tests to check that CdmModel.php matches
+the official specification.

@@ -1,0 +1,94 @@
+{
+    "projects": {
+        "P1": {
+            "hit": 29,
+            "n": 29,
+            "miss": [],
+            "lang": "es"
+        },
+        "P2": {
+            "hit": 17,
+            "n": 19,
+            "miss": [
+                "hipoglucemias: Condition ≠ Observation|Measurement",
+                "comentarios: Observation ≠ NotMapped"
+            ],
+            "lang": "es"
+        },
+        "P3": {
+            "hit": 18,
+            "n": 18,
+            "miss": [],
+            "lang": "es"
+        },
+        "P4": {
+            "hit": 13,
+            "n": 13,
+            "miss": [],
+            "lang": "es"
+        },
+        "P10": {
+            "hit": 17,
+            "n": 17,
+            "miss": [],
+            "lang": "en"
+        },
+        "P5": {
+            "hit": 17,
+            "n": 17,
+            "miss": [],
+            "lang": "es"
+        },
+        "P6": {
+            "hit": 18,
+            "n": 18,
+            "miss": [],
+            "lang": "en"
+        },
+        "P7": {
+            "hit": 19,
+            "n": 19,
+            "miss": [],
+            "lang": "en"
+        },
+        "P8": {
+            "hit": 17,
+            "n": 17,
+            "miss": [],
+            "lang": "en"
+        },
+        "P9": {
+            "hit": 19,
+            "n": 19,
+            "miss": [],
+            "lang": "en"
+        }
+    },
+    "total": [
+        184,
+        186
+    ],
+    "by_lang": {
+        "es": [
+            94,
+            96
+        ],
+        "en": [
+            90,
+            90
+        ]
+    },
+    "confidence": {
+        "high": {
+            "ok": 82
+        },
+        "medium": {
+            "ok": 96,
+            "ko": 1
+        },
+        "low": {
+            "ok": 6,
+            "ko": 1
+        }
+    }
+}

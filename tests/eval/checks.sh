@@ -1,0 +1,21 @@
+#!/bin/sh
+# Integrity of each loaded schema. Output: schema|check|value
+for s in p1 p2 p3 p4 p5 p6 p7 p8 p9 p10; do
+psql -U postgres -d cdm -At -F'|' <<SQL
+select '$s','rows_'||table_name, (xpath('/row/c/text()', query_to_xml(format('select count(*) c from %I.%I', '$s', table_name), false, true, '')))[1]::text
+  from information_schema.tables where table_schema='$s' and table_name in ('person','observation_period','visit_occurrence','condition_occurrence','drug_exposure','procedure_occurrence','measurement','observation','note','death','care_site','provider','source_to_concept_map','cdm_source');
+select '$s','fk_person_broken', count(*) from (select person_id from $s.measurement union all select person_id from $s.condition_occurrence union all select person_id from $s.drug_exposure union all select person_id from $s.observation union all select person_id from $s.note union all select person_id from $s.death union all select person_id from $s.visit_occurrence union all select person_id from $s.observation_period) h where person_id not in (select person_id from $s.person);
+select '$s','fk_visit_broken', count(*) from (select visit_occurrence_id v from $s.measurement union all select visit_occurrence_id from $s.condition_occurrence union all select visit_occurrence_id from $s.drug_exposure union all select visit_occurrence_id from $s.observation union all select visit_occurrence_id from $s.note) h where v is not null and v not in (select visit_occurrence_id from $s.visit_occurrence);
+select '$s','fk_care_site_broken', count(*) from (select care_site_id c from $s.person union all select care_site_id from $s.visit_occurrence) x where c is not null and c not in (select care_site_id from $s.care_site);
+select '$s','fk_provider_broken', count(*) from (select provider_id p from $s.person union all select provider_id from $s.visit_occurrence union all select provider_id from $s.measurement) x where p is not null and p not in (select provider_id from $s.provider);
+select '$s','fact_outside_visit', count(*) from (select measurement_date d, visit_occurrence_id v from $s.measurement union all select condition_start_date, visit_occurrence_id from $s.condition_occurrence union all select drug_exposure_start_date, visit_occurrence_id from $s.drug_exposure union all select observation_date, visit_occurrence_id from $s.observation) h join $s.visit_occurrence vo on vo.visit_occurrence_id = h.v where h.d not between vo.visit_start_date and vo.visit_end_date;
+select '$s','fact_outside_period', count(*) from (select person_id, measurement_date d from $s.measurement union all select person_id, condition_start_date from $s.condition_occurrence union all select person_id, drug_exposure_start_date from $s.drug_exposure union all select person_id, observation_date from $s.observation) h join $s.observation_period o using (person_id) where h.d not between o.observation_period_start_date and o.observation_period_end_date;
+select '$s','fact_before_birth', count(*) from (select person_id, measurement_date d from $s.measurement union all select person_id, condition_start_date from $s.condition_occurrence union all select person_id, drug_exposure_start_date from $s.drug_exposure) h join $s.person p using (person_id) where extract(year from h.d) < p.year_of_birth;
+select '$s','fact_after_death', count(*) from (select person_id, measurement_date d from $s.measurement union all select person_id, condition_start_date from $s.condition_occurrence union all select person_id, drug_exposure_start_date from $s.drug_exposure) h join $s.death x using (person_id) where h.d > x.death_date + 1;
+select '$s','end_before_start', count(*) from $s.drug_exposure where drug_exposure_end_date < drug_exposure_start_date;
+select '$s','measurements_with_unit_concept', count(*) from $s.measurement where unit_concept_id is not null;
+select '$s','measurements_with_value_concept', count(*) from $s.measurement where value_as_concept_id is not null;
+select '$s','measurements_with_operator', count(*) from $s.measurement where operator_concept_id is not null;
+select '$s','person_without_period', count(*) from $s.person where person_id not in (select person_id from $s.observation_period);
+SQL
+done

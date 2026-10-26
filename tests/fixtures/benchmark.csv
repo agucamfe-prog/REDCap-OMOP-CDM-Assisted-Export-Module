@@ -1,0 +1,121 @@
+lang,set,field_name,field_type,label,choices,validation,identifier,expected
+es,dev,record_id,text,ID del participante,,,,Person
+es,dev,iniciales,text,Iniciales del paciente,,,y,NotMapped
+es,dev,nombre_paciente,text,Nombre del paciente,,,y,NotMapped
+es,dev,fecha_nacimiento,text,Fecha de nacimiento,,date_ymd,y,Person
+es,dev,sexo,radio,Sexo,"1, Hombre | 2, Mujer",,,Person
+es,dev,telefono,text,Teléfono de contacto,,phone,y,NotMapped
+es,dev,centro_salud,dropdown,Centro de Salud,"1, Centro Norte | 2, Centro Sur",,,NotMapped
+es,dev,estudios,radio,Nivel de estudios,"1, Sin estudios | 2, Primaria | 3, Secundaria | 4, Universitario",,,Observation
+es,dev,situacion_laboral,dropdown,Situación laboral,"1, Empleado | 2, Desempleado | 3, Jubilado | 4, Estudiante",,,Observation
+es,dev,convivientes,text,Número de personas que conviven en el domicilio,,integer,,Observation
+es,dev,tabaquismo,radio,Tabaquismo,"1, Fumador | 2, Exfumador | 3, Nunca fumador",,,Observation
+es,dev,consentimiento,yesno,¿Firmó el consentimiento informado?,,,,NotMapped
+es,dev,comorbilidades,checkbox,Comorbilidades,"1, Diabetes | 2, Hipertensión | 3, EPOC | 4, Ninguna",,,Condition
+es,dev,edad_diag,text,Edad al diagnóstico (años),,integer,,Observation
+es,dev,fecha_diag_tb,text,Fecha de diagnóstico de tuberculosis,,date_ymd,,Condition|DateAnchor
+es,dev,fecha_visita,text,Fecha de la visita,,date_ymd,,Visit|DateAnchor
+es,dev,peso,text,Peso (kg),,number,,Measurement
+es,dev,talla,text,Talla (cm),,integer,,Measurement
+es,dev,tas,text,Tensión arterial sistólica (mmHg),,integer,,Measurement
+es,dev,imc,calc,IMC,"round([peso]*10000/([talla]*[talla]),1)",,,NotMapped|Measurement
+es,dev,fiebre,yesno,¿Presenta fiebre?,,,,Condition
+es,dev,dolor_visita,yesno,¿Refiere dolor en el momento de la visita?,,,,Condition
+es,dev,eva_dolor,radio,Intensidad del dolor (EVA),"0, 0 Sin dolor | 1, 1 | 2, 2 | 3, 3 | 4, 4 | 5, 5 | 6, 6 | 7, 7 | 8, 8 | 9, 9 | 10, 10 Máximo dolor",,,Measurement
+es,dev,perdida_peso,yesno,Pérdida de peso,,,,Condition
+es,dev,ingreso_hosp,yesno,Ingreso en hospital desde la última visita,,,,Visit|Observation
+es,dev,fecha_inicio_sint,text,Fecha de inicio de síntomas,,,,Condition|Observation|DateAnchor
+es,dev,glucosa,text,Glucosa (mg/dL),,,,Measurement
+es,dev,medicacion_si,yesno,¿Recibe medicación?,,,,Drug|Observation
+es,dev,nombre_medicamento,text,Nombre del medicamento,,,,Drug
+es,dev,trat_quirurgico,yesno,Tratamiento quirúrgico,,,,Procedure
+es,dev,notas,notes,Observaciones,,,,Observation|Note|NotMapped
+es,dev,medico_resp,text,Médico responsable,,,,NotMapped
+es,dev,fecha_analitica,text,Fecha de extracción,,date_ymd,,DateAnchor|Specimen
+es,dev,hemoglobina,text,Hemoglobina (g/dL),,number,,Measurement
+es,dev,creatinina,text,Creatinina (mg/dL),,number,,Measurement
+es,dev,cd4,text,Recuento CD4 (cel/µL),,,,Measurement
+es,dev,carga_viral,text,Carga viral VIH (copias/mL),,integer,,Measurement
+es,dev,baciloscopia,radio,Baciloscopia de esputo,"1, Positiva | 2, Negativa | 3, No realizada",,,Measurement
+es,dev,genexpert,dropdown,Resultado de GeneXpert,"1, Detectado | 2, No detectado | 3, Indeterminado",,,Measurement
+es,dev,hba1c,text,HbA1c (%),,number,,Measurement
+es,dev,fecha_inicio_tto,text,Fecha de inicio del tratamiento,,date_ymd,,DateAnchor|Drug
+es,dev,farmaco,dropdown,Fármaco antituberculoso,"1, Isoniazida | 2, Rifampicina | 3, Pirazinamida | 4, Etambutol",,,Drug
+es,dev,dosis_olvidadas,text,Número de dosis olvidadas,,integer,,Observation|Drug
+es,dev,efectos_adversos,yesno,Efectos adversos,,,,Condition
+es,dev,fecha_cierre,text,Fecha de cierre,,date_ymd,,DateAnchor
+es,dev,exitus,yesno,Exitus,,,,Death
+es,dev,fecha_fallecimiento,text,Fecha de fallecimiento,,date_ymd,,Death
+es,dev,causa_muerte,text,Causa de muerte,,,,Death|Condition
+es,dev,resultado_tto,radio,Resultado del tratamiento,"1, Curación | 2, Tratamiento completado | 3, Fracaso terapéutico | 4, Abandono | 5, Exitus",,,Observation
+en,dev,study_id,text,Study ID,,,,Person
+en,dev,first_name,text,First name,,,y,NotMapped
+en,dev,dob,text,Date of birth,,date_mdy,y,Person
+en,dev,sex,radio,Sex,"1, Male | 2, Female | 3, Prefer not to say",,,Person
+en,dev,ethnicity,dropdown,Ethnicity,"1, Hispanic or Latino | 2, Not Hispanic or Latino | 9, Unknown",,,Person
+en,dev,zip,text,Zip code,,zipcode,y,NotMapped
+en,dev,marital,dropdown,Marital status,"1, Single | 2, Married | 3, Divorced | 4, Widowed",,,Observation
+en,dev,education,radio,Highest level of education,"1, Primary | 2, Secondary | 3, University",,,Observation
+en,dev,clinic,dropdown,Clinic,"1, North Clinic | 2, South Clinic",,,NotMapped
+en,dev,enrol_date,text,Enrolment date,,date_ymd,,DateAnchor|Visit
+en,dev,visit_date,text,Baseline visit date,,date_ymd,,Visit|DateAnchor
+en,dev,weight,text,Weight (kg),,number,,Measurement
+en,dev,height,text,Height (cm),,number,,Measurement
+en,dev,sbp,text,Systolic blood pressure (mmHg),,integer,,Measurement
+en,dev,hr,text,Heart rate (bpm),,integer,,Measurement
+en,dev,hba1c,text,HbA1c (%),,number,,Measurement
+en,dev,ldl,text,LDL cholesterol (mg/dL),,number,,Measurement
+en,dev,smoking,radio,Smoking status,"1, Current smoker | 2, Former smoker | 3, Never smoked",,,Observation
+en,dev,diabetes,yesno,Diabetes mellitus,,,,Condition
+en,dev,hx_mi,yesno,History of myocardial infarction,,,,Condition
+en,dev,admitted_hospital,yesno,Admitted to hospital in the last 12 months,,,,Visit|Observation
+en,dev,pain_score,radio,Pain score,"0, 0 - No pain | 1, 1 | 2, 2 | 3, 3 | 4, 4 | 5, 5 | 6, 6 | 7, 7 | 8, 8 | 9, 9 | 10, 10 - Worst pain imaginable",,,Measurement
+en,dev,hrt,yesno,Hormone replacement therapy,,,,Drug
+en,dev,physio,yesno,Physical therapy,,,,Procedure
+en,dev,age_dx,text,Age at diagnosis,,integer,,Observation
+en,dev,comorbid,checkbox,Comorbidities,"1, Hypertension | 2, Chronic kidney disease | 3, COPD | 4, Asthma",,,Condition
+en,dev,med_list,notes,Current medications,,,,Drug|Observation|Note
+en,dev,n_visits,text,Number of hospital visits,,,,Observation|Visit
+en,dev,on_meds,yesno,Is the patient on any medication?,,,,Drug|Observation
+en,dev,chest_xray,radio,Chest X-ray,"1, Normal | 2, Abnormal | 3, Not done",,,Procedure|Measurement
+en,dev,lab_date,text,Date of blood test,,date_ymd,,DateAnchor|Specimen
+en,dev,hb,text,Haemoglobin (g/dL),,number,,Measurement
+en,dev,creat,text,Creatinine (umol/L),,number,,Measurement
+en,dev,egfr,text,eGFR (mL/min/1.73m2),,number,,Measurement
+en,dev,crp,text,CRP (mg/L),,,,Measurement
+en,dev,covid_pcr,radio,SARS-CoV-2 PCR result,"1, Positive | 2, Negative | 3, Inconclusive",,,Measurement
+en,dev,ae_date,text,Date of adverse event onset,,date_ymd,,DateAnchor|Condition
+en,dev,ae_desc,text,Adverse event description,,,,Condition|Observation
+en,dev,ae_grade,radio,Severity grade,"1, Grade 1 - Mild | 2, Grade 2 - Moderate | 3, Grade 3 - Severe | 4, Grade 4 - Life-threatening | 5, Grade 5 - Death",,,Measurement|Observation
+en,dev,ae_serious,yesno,Serious adverse event?,,,,Condition|Observation
+en,dev,fu_date,text,Date of last contact,,date_ymd,,DateAnchor
+en,dev,vital_status,radio,Vital status,"1, Alive | 2, Deceased",,,Death|Observation
+en,dev,death_date,text,Date of death,,date_ymd,,Death
+en,dev,cause_death,text,Cause of death,,,,Death|Condition
+es,holdout,fecha_ingreso,text,Fecha de ingreso hospitalario,,date_ymd,,Visit
+es,holdout,cigarrillos,text,Número de cigarrillos al día,,integer,,Measurement|Observation
+es,holdout,alergia_peni,yesno,Alergia a penicilina,,,,Condition|Observation
+es,holdout,vacuna_gripe,yesno,Vacunación antigripal,,,,Drug|Procedure
+es,holdout,hosp_ref,dropdown,Hospital de referencia,"1, Hospital A | 2, Hospital B",,,NotMapped
+es,holdout,sato2,text,Saturación de oxígeno (%),,integer,,Measurement
+es,holdout,temp,text,Temperatura (°C),,number,,Measurement
+es,holdout,rx_torax,radio,Radiografía de tórax,"1, Normal | 2, Patológica | 3, No realizada",,,Procedure|Measurement
+es,holdout,profesion,text,Profesión,,,,Observation
+es,holdout,pais_nac,dropdown,País de nacimiento,"1, España | 2, Marruecos | 3, Otro",,,Person|Observation
+es,holdout,embarazo,yesno,Embarazo actual,,,,Condition|Observation
+es,holdout,biopsia,yesno,Biopsia realizada,,,,Procedure
+es,holdout,marcapasos,yesno,Portador de marcapasos,,,,Device
+es,holdout,tipo_muestra,dropdown,Tipo de muestra,"1, Sangre | 2, Orina | 3, Esputo",,,Specimen
+es,holdout,nombre,text,Nombre,,,,NotMapped
+en,holdout,birth_weight,text,Weight at birth (g),,integer,,Measurement
+en,holdout,admission_date,text,Date of hospital admission,,date_ymd,,Visit
+en,holdout,cigs,text,Number of cigarettes per day,,integer,,Measurement|Observation
+en,holdout,pen_allergy,yesno,Penicillin allergy,,,,Condition|Observation
+en,holdout,flu_vacc,yesno,Flu vaccine received,,,,Drug|Procedure
+en,holdout,ref_hosp,dropdown,Referring hospital,"1, Hospital A | 2, Hospital B",,,NotMapped
+en,holdout,spo2,text,Oxygen saturation (%),,integer,,Measurement
+en,holdout,temperature,text,Body temperature (°C),,number,,Measurement
+en,holdout,occupation,text,Occupation,,,,Observation
+en,holdout,pacemaker,yesno,Pacemaker,,,,Device
+en,holdout,specimen_type,dropdown,Specimen type,"1, Blood | 2, Urine | 3, Sputum",,,Specimen
+en,holdout,pregnant,yesno,Currently pregnant,,,,Condition|Observation

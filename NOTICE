@@ -1,0 +1,9 @@
+OMOP-CDM Export
+Copyright 2026 Fernando Agustín Camacho
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This product includes software developed by Observational Health Data
+Sciences and Informatics (OHDSI): the official OMOP CDM v5.4 PostgreSQL DDL
+and field-level specification, distributed unmodified under the Apache
+License 2.0. See resources/NOTICE.txt for details.

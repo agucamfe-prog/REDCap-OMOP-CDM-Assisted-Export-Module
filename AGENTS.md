@@ -83,6 +83,9 @@ The exit code is non-zero if anything fails.
   variable names in English; comments and documentation in English, explaining
   the *why*, not the *what*.
 - **No new dependencies.** No Composer or npm at runtime.
+- **Licence:** the module is Apache 2.0 (`LICENSE`, `NOTICE`). Any third-party
+  file added to the repository must have a compatible licence and an entry in
+  `resources/NOTICE.txt`.
 - **Texts:** never a visible literal in the code. Add the key to
   `lang/Spanish.ini` **and** `lang/English.ini`, and use `$module->tt('key')`.
   The interface, the export report and the mapping document are bilingual; the

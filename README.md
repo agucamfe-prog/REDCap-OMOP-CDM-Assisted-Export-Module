@@ -785,3 +785,9 @@ ejemplos de este documento son reales en su mayoría, pero el fichero de prueba
 no es una referencia: compruébalos siempre en Athena. Lo mismo para los dos
 conceptos de idioma que NOTE usa por defecto (4180186 English language, 4182511
 Spanish language): están en la configuración para que se puedan cambiar.
+
+## Licencia
+
+Apache License 2.0: ver [`LICENSE`](LICENSE) y [`NOTICE`](NOTICE). Es la misma
+licencia que el DDL oficial de OHDSI incluido en `resources/ddl/`, e incluye una
+concesión explícita de patentes. Copyright 2026 Fernando Agustín Camacho.
